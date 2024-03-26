@@ -27,7 +27,7 @@ RUN set -x \
                 echo "key verification failed!"; \
                 exit 1; \
             fi \
-            && apk add -X "https://nginx.org/packages/alpine/v3.19/main/aarch64/" --no-cache $nginxPackages \
+            && apk add -X "https://nginx.org/packages/alpine/v3.19/main/aarch64/" apk add nginx=1.24.0-r1 nginx-dbg=1.24.0-r1 nginx-module-geoip=1.24.0-r1 nginx-module-geoip-dbg=1.24.0-r1 nginx-module-image-filter=1.24.0-r1 nginx-module-image-filter-dbg=1.24.0-r1 nginx-module-njs=1.24.0.0.8.2-r1 nginx-module-njs-dbg=1.24.0.0.8.2-r1 nginx-module-perl=1.24.0-r1 nginx-module-perl-dbg=1.24.0-r1 nginx-module-xslt=1.24.0-r1 nginx-module-xslt-dbg=1.24.0-r1 \
             ;; \
         *) \
 # we're on an architecture upstream doesn't officially build for
