@@ -52,7 +52,7 @@ RUN set -x \
                 && curl -o /tmp/nginx_signing.rsa.pub https://nginx.org/keys/nginx_signing.rsa.pub \
                 && openssl rsa -pubin -in /tmp/nginx_signing.rsa.pub -text -noout \
                 && sudo mv /tmp/nginx_signing.rsa.pub /etc/apk/keys/ \
-                && sudo apk add nginx
+                && sudo apk add nginx \
                 && apk del --no-network .build-deps && apk add -X ${tempDir}/packages/alpine/ --no-cache $nginxPackages 
             ;; \
     esac \
