@@ -54,7 +54,7 @@ RUN set -x \
                 && sudo mv /tmp/nginx_signing.rsa.pub /etc/apk/keys/ \
                 && sudo apk add nginx \
                 && apk del --no-network .build-deps && apk add -X ${tempDir}/packages/alpine/ --no-cache $nginxPackages \
-            ;; \
+           " ;; \
     esac \
 # remove checksum deps
     && apk del --no-network .checksum-deps \
