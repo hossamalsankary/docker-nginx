@@ -88,11 +88,11 @@ RUN set -x \
 # create a docker-entrypoint.d directory
     && mkdir /docker-entrypoint.d
 
-COPY docker-entrypoint.sh /
-COPY 10-listen-on-ipv6-by-default.sh /docker-entrypoint.d
-COPY 15-local-resolvers.envsh /docker-entrypoint.d
-COPY 20-envsubst-on-templates.sh /docker-entrypoint.d
-COPY 30-tune-worker-processes.sh /docker-entrypoint.d
+COPY stable/alpine-slim/docker-entrypoint.sh /
+COPY stable/alpine-slim/10-listen-on-ipv6-by-default.sh /docker-entrypoint.d
+COPY stable/alpine-slim/15-local-resolvers.envsh /docker-entrypoint.d
+COPY stable/alpine-slim/20-envsubst-on-templates.sh /docker-entrypoint.d
+COPY stable/alpine-slim/30-tune-worker-processes.sh /docker-entrypoint.d
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 80
