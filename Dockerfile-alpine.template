@@ -1,4 +1,4 @@
-FROM alpine
+ FROM alpine
 
 LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>"
 
@@ -6,7 +6,7 @@ ENV NGINX_VERSION 1.24.0
 ENV PKG_RELEASE   1
 
 RUN set -x \
-    && addgroup -g 101 -S nginx || true \    # Check if group exists before creating
+    && addgroup -g 101 -S nginx || true \    
     && adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx \
     && apk add --no-cache --virtual .build-deps \
         openssl \
